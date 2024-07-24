@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:674226730150:android:a9b5ad5b1b966ede98f067",
         "android_client_info": {
-          "package_name": "com.ahmed.app"
+          "package_name": "com.example.bookly"
         }
       },
       "oauth_client": [],

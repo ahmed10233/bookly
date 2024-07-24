@@ -1,6 +1,7 @@
+
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/cubit/auth_cubit/auth_cubit.dart';
-import 'package:bookly_app/core/utils/App_router.dart';
+import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
