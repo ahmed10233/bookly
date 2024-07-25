@@ -1,4 +1,4 @@
-import 'package:bookly_app/Features/home/presentation/view/widgets/costum_text_field.dart';
+import 'package:bookly_app/Features/home/presentation/view/widgets/custom_text_field.dart';
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/cubit/auth_cubit/auth_cubit.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
