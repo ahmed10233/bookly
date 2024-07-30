@@ -11,8 +11,10 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       
+      
       controller: contloller,
       decoration: InputDecoration(
+        suffixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.remove_red_eye_outlined)),
         contentPadding: const EdgeInsets.symmetric(
           vertical: 18,
           horizontal: 12,
