@@ -16,7 +16,7 @@ class CustomListViewItem extends StatelessWidget {
         itemBuilder: (context, index) {
           return const Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: const CustomBookItem(),
+            child:  CustomBookItem(),
           );
         },
         
