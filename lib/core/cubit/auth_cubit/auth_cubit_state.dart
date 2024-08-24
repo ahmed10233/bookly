@@ -30,6 +30,6 @@ class EmailVerificationFailure extends AuthState {
 }
 
 class EmailNotVerified extends AuthState {
-   final String errorMessage;
- EmailNotVerified ({required this.errorMessage});
+  final String errorMessage;
+  EmailNotVerified({required this.errorMessage});
 }

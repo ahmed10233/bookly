@@ -20,11 +20,14 @@ class HomeViewBody extends StatelessWidget {
             SizedBox(height: 40),
             Padding(
               padding: EdgeInsets.only(left: 30),
-              child: Text("Beast Seller",style: TextStyle(color: Colors.white,
-          fontSize: 20,
-          fontWeight: FontWeight.w800,
-         
-          ),),
+              child: Text(
+                "Beast Seller",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
             ),
           ],
         ),

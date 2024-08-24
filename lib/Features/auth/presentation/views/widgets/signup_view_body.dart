@@ -39,7 +39,7 @@ class SignupViewBody extends StatelessWidget {
             backgroundColor: kPrimaryColor,
             body: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: SingleChildScrollView( 
+              child: SingleChildScrollView(
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

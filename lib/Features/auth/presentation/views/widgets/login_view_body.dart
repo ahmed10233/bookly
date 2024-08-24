@@ -18,16 +18,17 @@ class LoginViewBody extends StatelessWidget {
     TextEditingController passwordContloller = TextEditingController();
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
-        if(state is LoginLoading){
-          isLoading=true;
-        }else if(state is LoginSuccess){
-          BlocProvider.of<AuthCubit>(context).loginMethod(emailContloller, passwordContloller);
+        if (state is LoginLoading) {
+          isLoading = true;
+        } else if (state is LoginSuccess) {
+          BlocProvider.of<AuthCubit>(context)
+              .loginMethod(emailContloller, passwordContloller);
           GoRouter.of(context).pushReplacement(AppRouter.kHomeView);
-          isLoading= false;
-        }else if(state is LoginFailure){
+          isLoading = false;
+        } else if (state is LoginFailure) {
           showSnackBar(context, state.errorMessage);
           isLoading = false;
-        }else if(state is EmailNotVerified){
+        } else if (state is EmailNotVerified) {
           showSnackBar(context, state.errorMessage);
           isLoading = false;
         }
@@ -70,7 +71,8 @@ class LoginViewBody extends StatelessWidget {
                       ),
                       ElevatedButton(
                         onPressed: () async {
-                          BlocProvider.of<AuthCubit>(context).loginMethod(emailContloller, passwordContloller);
+                          BlocProvider.of<AuthCubit>(context)
+                              .loginMethod(emailContloller, passwordContloller);
                         },
                         style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(

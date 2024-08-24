@@ -85,5 +85,4 @@ class DefaultFirebaseOptions {
     storageBucket: 'bookly-44433.appspot.com',
     measurementId: 'G-7JR7QBWFL1',
   );
-
 }

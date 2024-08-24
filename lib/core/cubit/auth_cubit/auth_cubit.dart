@@ -19,9 +19,7 @@ class AuthCubit extends Cubit<AuthState> {
 
       if (user != null && !user.emailVerified) {
         await FirebaseAuth.instance.signOut();
-        emit(EmailNotVerified(
-          errorMessage: 'Email Not Verified'
-        ));
+        emit(EmailNotVerified(errorMessage: 'Email Not Verified'));
       } else {
         emit(LoginSuccess());
       }
@@ -80,7 +78,8 @@ class AuthCubit extends Cubit<AuthState> {
         emit(EmailVerificationSent());
       }
     } catch (e) {
-      emit(EmailVerificationFailure(errorMessage: 'Failed to send verification email'));
+      emit(EmailVerificationFailure(
+          errorMessage: 'Failed to send verification email'));
     }
   }
 }
