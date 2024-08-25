@@ -31,6 +31,26 @@ class HomeRepoImplemantaion implements HomeRepo {
 
   @override
   Future<Either<Failure, List<AllBooksModel>>> fetchRecentAdditions() {
+   
+    Future<Either<Failure, List<AllBooksModel>>> fetchAllBooks() async {
+    try {
+      var data = await apiService.get(endPoint: 'get-latest/month/showall/ar/ar/1/25/json');
+
+      // Assuming data is a List of JSON objects, you map it to AllBooksModel
+      List<AllBooksModel> books = (data as List)
+          .map((book) => AllBooksModel.fromJson(book))
+          .toList();
+
+      return right(books);
+    } catch (e) {
+    
+      if (e is DioException) {
+  return left(ServerFailure.fromDioError(e));
+}
+     return left( ServerFailure(e.toString()));
+    }
+  }
+
     throw UnimplementedError();
   }
 }
