@@ -15,7 +15,7 @@ class RecentlyAdditionFailure extends RecentlyAdditionState {
 
   final String erroMessage;
 
- const RecentlyAdditionFailure({required this.erroMessage});
+ const RecentlyAdditionFailure(this.erroMessage);
 }
  
 class RecentlyAdditionSuccess extends RecentlyAdditionState {
