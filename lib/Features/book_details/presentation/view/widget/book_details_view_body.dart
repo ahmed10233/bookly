@@ -19,7 +19,7 @@ class BookDetailsViewBody extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: width * 0.2),
-            child: const CustomBookItem(),
+            child: const CustomBookItem(bookName: 'ahmed',autherName: 'sadek',),
           ),
           const SizedBox(
             height: 18,
@@ -109,7 +109,7 @@ class CustomListViewDetails extends StatelessWidget {
           itemBuilder: (context, index) {
             return const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 4),
-                child: CustomBookItem());
+                child: CustomBookItem(bookName: 'sadek',autherName: 'ahmed',));
           }),
     );
   }

@@ -14,43 +14,39 @@ class HomeRepoImplemantaion implements HomeRepo {
     try {
       var data = await apiService.get(endPoint: 'books/ar/ar/1/50/json');
 
-      // Assuming data is a List of JSON objects, you map it to AllBooksModel
-      List<AllBooksModel> books = (data as List)
-          .map((book) => AllBooksModel.fromJson(book))
-          .toList();
+      List<AllBooksModel> books =[];
+      for (var item in data['data']){
+        books.add(AllBooksModel.fromJson(item));
+      }
+
 
       return right(books);
     } catch (e) {
-    
       if (e is DioException) {
-  return left(ServerFailure.fromDioError(e));
-}
-     return left( ServerFailure(e.toString()));
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(e.toString()));
     }
   }
 
   @override
-  Future<Either<Failure, List<AllBooksModel>>> fetchRecentAdditions() {
-   
-    Future<Either<Failure, List<AllBooksModel>>> fetchAllBooks() async {
-    try {
-      var data = await apiService.get(endPoint: 'get-latest/month/showall/ar/ar/1/25/json');
+  Future<Either<Failure, List<AllBooksModel>>> fetchRecentAdditions() async{
+    
+  try {
+      var data = await apiService.get(   endPoint: 'get-latest/month/showall/ar/ar/1/25/json');
 
-      // Assuming data is a List of JSON objects, you map it to AllBooksModel
-      List<AllBooksModel> books = (data as List)
-          .map((book) => AllBooksModel.fromJson(book))
-          .toList();
+      List<AllBooksModel> books =[];
+      for (var item in data['data']){
+        books.add(AllBooksModel.fromJson(item));
+      }
+
 
       return right(books);
     } catch (e) {
-    
       if (e is DioException) {
-  return left(ServerFailure.fromDioError(e));
-}
-     return left( ServerFailure(e.toString()));
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(e.toString()));
     }
-  }
-
-    throw UnimplementedError();
   }
 }

@@ -12,16 +12,13 @@ class RecentlyAdditionInitial extends RecentlyAdditionState {}
 class RecentlyAdditionLoading extends RecentlyAdditionState {}
 
 class RecentlyAdditionFailure extends RecentlyAdditionState {
-
   final String erroMessage;
 
- const RecentlyAdditionFailure(this.erroMessage);
+  const RecentlyAdditionFailure(this.erroMessage);
 }
- 
-class RecentlyAdditionSuccess extends RecentlyAdditionState {
 
+class RecentlyAdditionSuccess extends RecentlyAdditionState {
   final List<AllBooksModel> books;
 
- const RecentlyAdditionSuccess(this.books);
-} 
-
+  const RecentlyAdditionSuccess(this.books);
+}

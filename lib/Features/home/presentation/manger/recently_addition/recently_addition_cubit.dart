@@ -8,16 +8,15 @@ part 'recently_addition_state.dart';
 class RecentlyAdditionCubit extends Cubit<RecentlyAdditionState> {
   RecentlyAdditionCubit(this.homeRepo) : super(RecentlyAdditionInitial());
 
- final HomeRepo homeRepo;
+  final HomeRepo homeRepo;
 
- Future <void>fetchRecentAddedBooks()async{
-  emit(RecentlyAdditionLoading());
-  var result = await homeRepo.fetchAllBooks();
-  result.fold((failure){
-    emit(RecentlyAdditionFailure(failure.erroMessage));
-  }, (books){
-    emit(RecentlyAdditionSuccess(books));
-  });
- }
-  
+  Future<void> fetchRecentAddedBooks() async {
+    emit(RecentlyAdditionLoading());
+    var result = await homeRepo.fetchRecentAdditions();
+    result.fold((failure) {
+      emit(RecentlyAdditionFailure(failure.erroMessage));
+    }, (books) {
+      emit(RecentlyAdditionSuccess(books));
+    });
+  }
 }

@@ -14,7 +14,7 @@ class SplashViewBodyState extends State<SplashViewBody> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 2), () {
-      GoRouter.of(context).push(AppRouter.kBookDetailsView);
+      GoRouter.of(context).push(AppRouter.kHomeView);
     });
   }
 

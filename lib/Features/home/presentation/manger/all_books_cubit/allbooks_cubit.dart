@@ -7,17 +7,16 @@ part 'allbooks_state.dart';
 
 class AllbooksCubit extends Cubit<AllbooksState> {
   AllbooksCubit(this.homeRepo) : super(AllbooksInitial());
- 
- final HomeRepo homeRepo;
 
- Future <void>fetchAllBooks()async{
-  emit(AllbooksLoading());
-  var result = await homeRepo.fetchAllBooks();
-  result.fold((failure){
-    emit(AllbooksFailure(failure.erroMessage));
-  }, (books){
-    emit(AllbooksSuccess(books: books));
-  });
- }
-  
+  final HomeRepo homeRepo;
+
+  Future<void> fetchAllBooks() async {
+    emit(AllbooksLoading());
+    var result = await homeRepo.fetchAllBooks();
+    result.fold((failure) {
+      emit(AllbooksFailure(failure.erroMessage));
+    }, (books) {
+      emit(AllbooksSuccess(books: books));
+    });
+  }
 }
